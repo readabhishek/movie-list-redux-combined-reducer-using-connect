@@ -1,3 +1,34 @@
+# Main Idea
+  1) How to use connect() function from 'react-redux' package which can be used to connect components to the Redux Store.
+  2) Use mapStateToProps() function to return/pass the right set of properties/objects from Redux store to the component. 
+  
+   ```shell script 
+   ## Use the below set of code in the components where you need to pass the store/state properties 
+   
+  function mapStateToProps(state) {
+    return {
+        movies: state.movies,
+        search: state.search
+    }
+}
+
+const ConnectedApp = connect(mapStateToProps)(App);
+export default ConnectedApp;
+
+
+
+## Also in index.js, make sure you use the Provider tag 
+
+ReactDOM.render(
+    <Provider store={store}>
+        <ConnectedApp />
+    </Provider>,
+    document.getElementById('root')
+);
+
+ ```
+
+
 # Steps to execute the Project
   
   1) Go to workspace folder in your system
